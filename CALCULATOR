@@ -1,0 +1,52 @@
+class Calculator():
+    @staticmethod
+    def add(x, y):
+        return x + y
+    @staticmethod
+    def subtract(x, y):
+        return x - y
+    @staticmethod
+    def multiply(x, y):
+        return x * y
+    @staticmethod
+    def divide(x, y):
+        if y != 0:
+            return x / y
+        else:
+            return "Error: Division by zero"
+
+a=Calculator()
+
+while True:
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Exit")
+
+    choice = input("Enter your choice (1-5): ")
+
+    if choice == '5':
+        print("Exiting the calculator. 🚀")
+        break
+
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+    except ValueError:
+        print("Invalid input. Please enter valid numbers.")
+        continue
+    if choice == '1':
+        result = a.add(num1, num2)
+        print(f"Result: {result}")
+    elif choice == '2':
+        result = a.subtract(num1, num2)
+        print(f"Result: {result}")
+    elif choice == '3':
+        result = a.multiply(num1, num2)
+        print(f"Result: {result}")
+    elif choice == '4':
+        result = a.divide(num1, num2)
+        print(f"Result: {result}")
+    else:
+        print("Invalid choice. Please enter a number between 1 and 5.")
